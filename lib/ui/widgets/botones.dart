@@ -16,6 +16,13 @@ class botones extends StatelessWidget {
   Widget build(BuildContext context, {Color? buttonColor}) {
     result_writer controller = Get.find();
 
+   answer controller2 = Get.find();
+
+    dificultad controller3 = Get.find();
+
+    int dia = controller3.difficultya;
+    int dib = controller3.difficultyb;
+
     Color buttonColor = Colors.blue;
     if (button == "go") {
       buttonColor = Colors.orange; // Cambia el color del botón "=" a naranja
@@ -52,7 +59,9 @@ class botones extends StatelessWidget {
       if (nombre == "C") {
         controller.reset();
       } else if (nombre == "go") {
-        print("");
+          if(controller.contador==6){print("fin");}
+          controller.aumento();
+          controller2.generar_q(dia,dib);
         } else {
         int numero = n_val(nombre);
         controller.newdigit(numero);
