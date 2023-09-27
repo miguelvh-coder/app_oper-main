@@ -57,32 +57,16 @@ class botones extends StatelessWidget {
       return 0;
     }
 
-    verificar(){
-      if(controller.result == controller2.respuesta){
-        Get.snackbar(
-        "Login",
-        "correct",
-        icon: const Icon(Icons.person, color: Color.fromARGB(255, 54, 244, 139)),
-        snackPosition: SnackPosition.BOTTOM,
-      );
-      }else{
-        Get.snackbar(
-        "Login",
-        "incorrect",
-        icon: const Icon(Icons.person, color: Colors.red),
-        snackPosition: SnackPosition.BOTTOM,
-      );
-      }
-    }
+    
 
 
 
-    void oprimido (String nombre) {
+    void oprimido (String nombre) async {
       if (nombre == "C") {
         controller.reset();
       } else if (nombre == "go") {
           if(controller.contador==6){print("fin");}
-          //verificar();
+          //controller2.verificar(3);
           controller.aumento();
           controller2.generar_q(dia,dib);
         } else {
@@ -98,7 +82,7 @@ class botones extends StatelessWidget {
       width: 60.0,
       height: 60.0,
       child: ElevatedButton(
-        onPressed: () {
+        onPressed: () async {
           oprimido(button);
         },
         child: Text(

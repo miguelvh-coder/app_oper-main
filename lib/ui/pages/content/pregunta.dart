@@ -75,6 +75,9 @@ class _CalculatorState extends State<Calculator> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
+
+          
+
           //principal
           operacion(),
           resultado(),
