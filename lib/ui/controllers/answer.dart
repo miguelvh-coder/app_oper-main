@@ -18,9 +18,13 @@ class answer extends GetxController {
   String get oper => _oper.value;
 
  
-  
+  final _puntuacion = 0.obs;
+  int get puntuacion => _puntuacion.value;
 
+  final _tiempo = 0.obs;
+  int get tiempo => _tiempo.value;
 
+  correct() => _puntuacion.value++;
 
   generar_q(int da, db) {
     if (da==1){
