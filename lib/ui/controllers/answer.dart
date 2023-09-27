@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 import 'dart:math';
@@ -56,6 +57,24 @@ class answer extends GetxController {
 
   } 
 
+
+  verificar(int a) {
+      if(a == respuesta){
+        Get.snackbar(
+        "Login",
+        "correct",
+        icon: const Icon(Icons.person, color: Color.fromARGB(255, 54, 244, 139)),
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      }else{
+        Get.snackbar(
+        "Login",
+        "incorrect",
+        icon: const Icon(Icons.person, color: Colors.red),
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      }
+    }
 
 
 }
