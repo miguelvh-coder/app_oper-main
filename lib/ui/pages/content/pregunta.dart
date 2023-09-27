@@ -34,52 +34,7 @@ class _CalculatorState extends State<Calculator> {
   String input = "";
   double result = 0.0;
 
-  void _onButtonPressed(String buttonText) {
-    setState(() {
-      if (buttonText == "C") {
-        input = "";
-        result = 0.0;
-      } else if (buttonText == "go") {
-        try {
-          result = evalExpression(input);
-        } catch (e) {
-          result = 0.0;
-        }
-      } else {
-        input += buttonText;
-      }
-    });
-  }
-
-  double evalExpression(String expression) {
-    return double.tryParse(expression) ?? 0.0;
-  }
-
-  Widget buildCircularButton(String buttonText, {Color? buttonColor}) {
-    buttonColor ??= Colors.blue; // Color predeterminado
-    if (buttonText == "go") {
-      buttonColor = Colors.orange; // Cambia el color del botón "=" a naranja
-    }
-
-    return Container(
-      width: 60.0,
-      height: 60.0,
-      child: ElevatedButton(
-        onPressed: () {
-          _onButtonPressed(buttonText);
-        },
-        child: Text(
-          buttonText,
-          style: TextStyle(fontSize: 24.0),
-        ),
-        style: ElevatedButton.styleFrom(
-          shape: CircleBorder(),
-          padding: EdgeInsets.all(16.0),
-          primary: buttonColor, // Establece el color del botón
-        ),
-      ),
-    );
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
