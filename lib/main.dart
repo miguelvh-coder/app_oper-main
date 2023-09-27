@@ -1,7 +1,8 @@
 import 'package:app_oper/ui/controllers/dificultad.dart';
+import 'package:app_oper/ui/controllers/answer.dart';
 import 'package:app_oper/ui/controllers/result_writer.dart';
-//import 'package:app_oper/ui/controllers/authentication_controller.dart';
-//import 'package:app_oper/ui/controllers/user_controller.dart';
+import 'package:app_oper/ui/controllers/authentication_controller.dart';
+import 'package:app_oper/ui/controllers/user_controller.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,6 +21,7 @@ void main() {
   
   Get.put(result_writer());
   Get.put(dificultad());
+  Get.put(answer());
   //Get.put(AuthenticationController());
   //Get.put(UserController());
   runApp(const MyApp());

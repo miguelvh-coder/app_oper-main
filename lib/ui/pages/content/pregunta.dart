@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/operacion.dart';
 import '../../widgets/resultado.dart';
 import '../../widgets/botones.dart';
 
+import 'package:app_oper/ui/controllers/answer.dart';
+import 'package:app_oper/ui/controllers/dificultad.dart';
 
 class CalculatorApp extends StatelessWidget {
   const CalculatorApp({super.key});
+  
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +27,10 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
+
+  answer controller = Get.find();
+  
+  
   String input = "";
   double result = 0.0;
 
@@ -74,6 +83,15 @@ class _CalculatorState extends State<Calculator> {
 
   @override
   Widget build(BuildContext context) {
+
+    dificultad controller = Get.find();
+    answer controller2 = Get.find();
+
+    int dia = controller.difficultya;
+    int dib = controller.difficultyb;
+    controller2.generar_q(dia,dib);
+
+
     List<List<String>> buttonGrid = [
       ["7", "8", "9"],
       ["4", "5", "6"],

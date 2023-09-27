@@ -21,8 +21,7 @@ class resultado extends StatelessWidget {
                 20.0), // Ajusta el espacio alrededor del texto
             child: Obx(() {
               final inputText = controller.result.toString();
-              final intValue = int.tryParse(
-                  inputText); // Intenta convertir el texto en un int
+              final intValue = int.tryParse(inputText); // Intenta convertir el texto en un int
 
               return Text(
                 intValue != null
