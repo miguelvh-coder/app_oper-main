@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/result_writer.dart';
+import '../controllers/answer.dart';
+import '../controllers/dificultad.dart';
 
 
 
@@ -16,7 +18,7 @@ class botones extends StatelessWidget {
   Widget build(BuildContext context, {Color? buttonColor}) {
     result_writer controller = Get.find();
 
-   answer controller2 = Get.find();
+    answer controller2 = Get.find();
 
     dificultad controller3 = Get.find();
 

@@ -46,10 +46,10 @@ class answer extends GetxController {
     }else if(o==1){
       _oper.value="-";
       _respuesta.value = a-b;
-    }else if(o==1){
+    }else if(o==2){
       _oper.value="*";
       _respuesta.value = a*b;
-    }else if(o==1){
+    }else if(o==3){
       _oper.value="/";
       _respuesta.value = (a/b).round();
     }
