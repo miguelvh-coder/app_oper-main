@@ -76,14 +76,13 @@ class _CalculatorState extends State<Calculator> {
         children: [
 
 
-          
-
           //principal
           operacion(),
           resultado(),
           Column(
             children: buttonRows,
           ),
+          
         ],
       ),
     );

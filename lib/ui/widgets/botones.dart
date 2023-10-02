@@ -66,7 +66,7 @@ class botones extends StatelessWidget {
         controller.reset();
       } else if (nombre == "go") {
           if(controller.contador==6){print("fin");}
-          //controller2.verificar(3);
+          controller2.verificar(3);
           controller.aumento();
           controller2.generar_q(dia,dib);
         } else {
