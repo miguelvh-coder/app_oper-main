@@ -60,18 +60,16 @@ class answer extends GetxController {
 
   verificar(int a) {
       if(a == _respuesta.value){
-        print("hola1");
         Get.snackbar(
-        "Login",
-        "correct",
+        "Así se hace",
+        "Respuesta correcta",
         icon: const Icon(Icons.person, color: Color.fromARGB(255, 54, 244, 139)),
         snackPosition: SnackPosition.BOTTOM,
         );
       }else{
-        print("hola2");
         Get.snackbar(
-        "Login",
-        "incorrect",
+        "Sigue intentando",
+        "Respuesta incorrecta",
         icon: const Icon(Icons.person, color: Colors.red),
         snackPosition: SnackPosition.BOTTOM,
         );

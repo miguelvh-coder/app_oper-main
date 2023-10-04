@@ -66,12 +66,13 @@ class botones extends StatelessWidget {
         controller.reset();
       } else if (nombre == "go") {
           if(controller.contador==6){print("fin");}
-          controller2.verificar(3);
+          await controller2.verificar(controller.result);
           controller.aumento();
           controller2.generar_q(dia,dib);
+          controller.reset();
         } else {
-        int numero = n_val(nombre);
-        controller.newdigit(numero);
+          int numero = n_val(nombre);
+          controller.newdigit(numero);
       }
     }
 
@@ -81,18 +82,24 @@ class botones extends StatelessWidget {
     return Container(
       width: 60.0,
       height: 60.0,
+
+      
+
       child: ElevatedButton(
-        onPressed: () async {
+        onPressed: () {
+          
           oprimido(button);
         },
+
+        style: ElevatedButton.styleFrom(
+          shape: const CircleBorder(),
+          padding: const EdgeInsets.all(16.0),
+          primary: buttonColor, // Establece el color del botón
+        ),
+        
         child: Text(
           button,
-          style: TextStyle(fontSize: 24.0),
-        ),
-        style: ElevatedButton.styleFrom(
-          shape: CircleBorder(),
-          padding: EdgeInsets.all(16.0),
-          primary: buttonColor, // Establece el color del botón
+          style: const TextStyle(fontSize: 24.0),
         ),
       ),
     );

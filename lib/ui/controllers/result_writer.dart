@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class result_writer extends GetxController {
-  final _result = 0.obs;
 
+  final _result = 0.obs;
   int get result => _result.value;
 
   final _contador = 1.obs;
@@ -14,7 +14,6 @@ class result_writer extends GetxController {
 
   aumento() => _contador.value++;
   reinicio() => _contador.value = 1;
-  
 }
 
 //LISTO
