@@ -30,7 +30,7 @@ class _ep extends State<ep> {
     return Scaffold(
       
       appBar: AppBar(
-        title: const Text("Calculadora Flutter"),
+        title: const Text("Fin de módulo"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +68,7 @@ class _ep extends State<ep> {
                     );
                   }),
                 ),
-                
+
               ],
             )
           ),

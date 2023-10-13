@@ -19,7 +19,6 @@ class CalculatorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Calculator(),
-      
     );
   }
 }
@@ -32,7 +31,6 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
 
   answer controller = Get.find();
-  
   
   String input = "";
   double result = 0.0;
@@ -49,6 +47,8 @@ class _CalculatorState extends State<Calculator> {
     int dia = controller.difficultya;
     int dib = controller.difficultyb;
     controller2.generar_q(dia,dib);
+    
+    
     
 
     List<List<String>> buttonGrid = [
@@ -70,18 +70,20 @@ class _CalculatorState extends State<Calculator> {
         mainAxisAlignment: MainAxisAlignment.center,
       ));
     }
-    
+    if(controller3.actual() >=6){
+      print("hola");
+      end_page();
+    }
     return Scaffold(
       
       appBar: AppBar(
-        title: const Text("Fin de módulo"),
+        title: const Text("Calculadora en flutter"),
       ),
       
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        
         children: [
-
-            end_page(), 
 
             //principal
             operacion(),
