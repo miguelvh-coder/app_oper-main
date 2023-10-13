@@ -5,8 +5,10 @@ import '../../widgets/operacion.dart';
 import '../../widgets/resultado.dart';
 import '../../widgets/botones.dart';
 
+import 'package:app_oper/ui/controllers/result_writer.dart';
 import 'package:app_oper/ui/controllers/answer.dart';
 import 'package:app_oper/ui/controllers/dificultad.dart';
+import 'package:app_oper/ui/pages/content/end_page.dart';
 
 class CalculatorApp extends StatelessWidget {
   const CalculatorApp({super.key});
@@ -42,6 +44,7 @@ class _CalculatorState extends State<Calculator> {
 
     dificultad controller = Get.find();
     answer controller2 = Get.find();
+    result_writer controller3 = Get.find();
 
     int dia = controller.difficultya;
     int dib = controller.difficultyb;
@@ -71,20 +74,21 @@ class _CalculatorState extends State<Calculator> {
     return Scaffold(
       
       appBar: AppBar(
-        title: Text("Calculadora Flutter"),
+        title: const Text("Fin de módulo"),
       ),
+      
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          
 
-          
-          //principal
-          operacion(),
-          resultado(),
-          Column(
-            children: buttonRows,
-          ),
+            end_page(), 
+
+            //principal
+            operacion(),
+            resultado(),
+            Column(
+              children: buttonRows,
+            ),
           
         ],
       ),

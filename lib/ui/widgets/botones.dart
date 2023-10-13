@@ -1,10 +1,12 @@
 
+import 'package:app_oper/ui/pages/content/end_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/result_writer.dart';
 import '../controllers/answer.dart';
 import '../controllers/dificultad.dart';
+import '../pages/content/pregunta.dart';
 
 
 
@@ -65,7 +67,7 @@ class botones extends StatelessWidget {
       if (nombre == "C") {
         controller.reset();
       } else if (nombre == "go") {
-          if(controller.contador==6){print("fin");}
+          
           await controller2.verificar(controller.result);
           controller.aumento();
           controller2.generar_q(dia,dib);
