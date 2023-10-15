@@ -81,7 +81,7 @@ class _CalculatorState extends State<Calculator> {
       ),
       
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         
         children: [
 
