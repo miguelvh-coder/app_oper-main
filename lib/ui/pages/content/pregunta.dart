@@ -81,11 +81,24 @@ class _CalculatorState extends State<Calculator> {
       ),
       
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         
         children: [
 
             //principal
+            
+            Padding(
+              padding: const EdgeInsets.all(20.0), // Ajusta el espacio alrededor del texto
+                child: Obx(() {
+                  final aa = controller3.contador.toString(); // Intenta convertir el texto en un int
+
+                  return Text(
+                  'Pregunta: $aa/6', // Muestra el int convertido o un mensaje de error
+                  style: TextStyle(fontSize: 18.0), // Ajusta el tamaño de la fuente del texto
+                  );
+                }),
+            ),
+
             operacion(),
             resultado(),
             Column(
