@@ -67,7 +67,11 @@ class botones extends StatelessWidget {
       if (nombre == "C") {
         controller.reset();
       } else if (nombre == "go") {
-          
+        //fin
+          if (controller.contador==5){
+            Get.to(const end_page());
+            //_logout();
+          }
           await controller2.verificar(controller.result);
           controller.aumento();
           controller2.generar_q(dia,dib);
