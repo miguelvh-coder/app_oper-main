@@ -66,7 +66,7 @@ class _ep extends State<ep> {
                     final point = controller.puntuacion.toString();
 
                     return Text(
-                      'Puntuación total: $point/6', // Muestra el int convertido o un mensaje de error
+                      'Respuestas correctas: $point/6', // Muestra el int convertido o un mensaje de error
                       style: const TextStyle(fontSize: 18.0), // Ajusta el tamaño de la fuente del texto
                     );
                   }),

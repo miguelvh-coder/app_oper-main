@@ -86,10 +86,12 @@ class _CalculatorState extends State<Calculator> {
         children: [
 
             //principal
-            
+            Row(mainAxisAlignment: MainAxisAlignment.start, 
+            children: [
             Padding(
               padding: const EdgeInsets.all(20.0), // Ajusta el espacio alrededor del texto
-                child: Obx(() {
+                child: 
+                Obx(() {
                   final aa = (controller3.contador+1).toString(); // Intenta convertir el texto en un int
 
                   return Text(
@@ -98,7 +100,8 @@ class _CalculatorState extends State<Calculator> {
                   );
                 }),
             ),
-
+            
+            ]),
             operacion(),
             resultado(),
             Column(
