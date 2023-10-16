@@ -32,9 +32,11 @@ class _ep extends State<ep> {
       appBar: AppBar(
         title: const Text("Fin de módulo"),
       ),
-      body: Column(
+      body: Center(
+        child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          
           Container(
             color: Colors.amber,
             child:(
@@ -56,6 +58,7 @@ class _ep extends State<ep> {
           Container(
             color: Color.fromARGB(255, 172, 172, 172),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children:[
                 Padding(
                   padding:const EdgeInsets.all(20.0), // Ajusta el espacio alrededor del textonull, // Cambia null por la función que debe ejecutarse cuando se presione el botón
@@ -75,6 +78,7 @@ class _ep extends State<ep> {
 
         ],
       ),
+      )
     );
   }
 }
