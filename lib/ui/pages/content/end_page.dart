@@ -95,7 +95,7 @@ class _ep extends State<ep> {
                     final tt = minutos(tempo.getTime());
 
                     return Text(
-                      'Tiempo total: $tt', // Muestra el int convertido o un mensaje de error
+                      'Tiempo total = $tt', // Muestra el int convertido o un mensaje de error
                       style: const TextStyle(fontSize: 18.0), // Ajusta el tamaño de la fuente del texto
                     );
                   }),

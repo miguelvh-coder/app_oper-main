@@ -66,6 +66,7 @@ class answer extends GetxController {
         icon: const Icon(Icons.person, color: Color.fromARGB(255, 54, 244, 139)),
         snackPosition: SnackPosition.BOTTOM,
         );
+        _puntuacion.value++;
       }else{
         Get.snackbar(
         "Sigue intentando",

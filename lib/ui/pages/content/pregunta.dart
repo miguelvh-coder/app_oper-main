@@ -29,6 +29,20 @@ class Calculator extends StatefulWidget {
   _CalculatorState createState() => _CalculatorState();
 }
 
+String minutos(int segu) {
+  int minutos = segu ~/ 60;
+  int segundos = segu % 60;
+  String min = minutos.toString();
+  String seg = segundos.toString();
+  if (minutos < 10) {
+    min = "0$minutos";
+  }
+  if (segundos < 10) {
+    seg = "0$segundos";
+  }
+  return "$min:$seg";
+}
+
 class _CalculatorState extends State<Calculator> {
 
   answer controller = Get.find();
@@ -89,13 +103,13 @@ class _CalculatorState extends State<Calculator> {
         children: [
 
             //principal
-            Row(mainAxisAlignment: MainAxisAlignment.start, 
+            Row(mainAxisAlignment: MainAxisAlignment.center, 
             children: [
             Padding(
               padding: const EdgeInsets.all(20.0), // Ajusta el espacio alrededor del texto
                 child: 
                 Obx(() {
-                  final aa = (controller3.contador+1).toString(); // Intenta convertir el texto en un int
+                  final aa = (controller3.contador).toString(); // Intenta convertir el texto en un int
 
                   return Text(
                   'Pregunta: $aa/6', // Muestra el int convertido o un mensaje de error
@@ -104,6 +118,18 @@ class _CalculatorState extends State<Calculator> {
                 }),
             ),
             
+            Padding(
+              padding: const EdgeInsets.all(20.0), // Ajusta el espacio alrededor del texto
+                child: 
+                Obx(() {
+                  final ta = minutos(tempo.getTime()); // Intenta convertir el texto en un int
+
+                  return Text(
+                  'Tiempo = $ta', // Muestra el int convertido o un mensaje de error
+                  style: TextStyle(fontSize: 18.0), // Ajusta el tamaño de la fuente del texto
+                  );
+                }),
+            ),
             ]),
             operacion(),
             resultado(),
