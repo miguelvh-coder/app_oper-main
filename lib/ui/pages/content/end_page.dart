@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'package:app_oper/ui/controllers/progresion.dart';
 import '../../controllers/answer.dart';
 
 
@@ -20,12 +21,28 @@ class ep extends StatefulWidget {
   _ep createState() => _ep();
 }
 
+String minutos(int segu) {
+  int minutos = segu ~/ 60;
+  int segundos = segu % 60;
+  String min = minutos.toString();
+  String seg = segundos.toString();
+  if (minutos < 10) {
+    min = "0$minutos";
+  }
+  if (segundos < 10) {
+    seg = "0$segundos";
+  }
+  return "$min:$seg";
+}
+
+
 class _ep extends State<ep> {
 
 
   @override
   Widget build(BuildContext context) {
     answer controller = Get.find();
+    progresion tempo = Get.find();
 
     return Scaffold(
       
@@ -75,10 +92,10 @@ class _ep extends State<ep> {
                 Padding(
                   padding:const EdgeInsets.all(20.0), // Ajusta el espacio alrededor del textonull, // Cambia null por la función que debe ejecutarse cuando se presione el botón
                     child: Obx(() {
-                    final point = controller.puntuacion.toString();
+                    final tt = minutos(tempo.getTime());
 
                     return Text(
-                      'Respuestas correctas: $point/6', // Muestra el int convertido o un mensaje de error
+                      'Tiempo total: $tt', // Muestra el int convertido o un mensaje de error
                       style: const TextStyle(fontSize: 18.0), // Ajusta el tamaño de la fuente del texto
                     );
                   }),

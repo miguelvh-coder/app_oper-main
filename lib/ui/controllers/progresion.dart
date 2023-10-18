@@ -16,4 +16,12 @@ class progresion extends GetxController {
   void terminar() {
     _timer.cancel();
   }
+
+  int getTime() {
+    return elapsedTime.value.inSeconds;
+  }
+
+  void reset() {
+    elapsedTime.value = Duration.zero;
+  }
 }

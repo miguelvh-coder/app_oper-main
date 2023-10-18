@@ -51,7 +51,7 @@ class _CalculatorState extends State<Calculator> {
     int dib = controller.difficultyb;
     controller2.generar_q(dia,dib);
     
-    
+    tempo.reset();
     tempo.empezar();
 
     List<List<String>> buttonGrid = [
