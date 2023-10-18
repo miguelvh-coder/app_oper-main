@@ -15,6 +15,8 @@ class result_writer extends GetxController {
   aumento() => _contador.value++;
   reinicio() => _contador.value = 1;
   int actual() => _contador.value;
+
+  
 }
 
 //LISTO

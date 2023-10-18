@@ -5,6 +5,7 @@ import '../../widgets/operacion.dart';
 import '../../widgets/resultado.dart';
 import '../../widgets/botones.dart';
 
+import 'package:app_oper/ui/controllers/progresion.dart';
 import 'package:app_oper/ui/controllers/result_writer.dart';
 import 'package:app_oper/ui/controllers/answer.dart';
 import 'package:app_oper/ui/controllers/dificultad.dart';
@@ -43,13 +44,15 @@ class _CalculatorState extends State<Calculator> {
     dificultad controller = Get.find();
     answer controller2 = Get.find();
     result_writer controller3 = Get.find();
+    progresion tempo = Get.find();
+
 
     int dia = controller.difficultya;
     int dib = controller.difficultyb;
     controller2.generar_q(dia,dib);
     
     
-    
+    tempo.empezar();
 
     List<List<String>> buttonGrid = [
       ["7", "8", "9"],

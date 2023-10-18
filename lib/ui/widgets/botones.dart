@@ -3,6 +3,7 @@ import 'package:app_oper/ui/pages/content/end_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'package:app_oper/ui/controllers/progresion.dart';
 import '../controllers/result_writer.dart';
 import '../controllers/answer.dart';
 import '../controllers/dificultad.dart';
@@ -23,6 +24,9 @@ class botones extends StatelessWidget {
     answer controller2 = Get.find();
 
     dificultad controller3 = Get.find();
+
+    progresion tempo = Get.find();
+
 
     int dia = controller3.difficultya;
     int dib = controller3.difficultyb;
@@ -69,6 +73,7 @@ class botones extends StatelessWidget {
       } else if (nombre == "go") {
         //fin5
           if (controller.contador==5){
+            tempo.terminar();
             Get.to(const end_page());
             //_logout();
           }
